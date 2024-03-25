@@ -1,0 +1,52 @@
+﻿using UnityEngine;
+using System.Collections;
+
+// This is the interface for any ship.
+// It details all the actions a ship can take, which action is chosen
+// is decided by the ShipController
+public interface ShipIntf {
+
+    ShipDefinitions.State getState();
+
+    float getAngle();
+
+    void brake();
+
+    void start();
+
+    void stop();
+
+    void move(float vertical);
+
+    void rotate(float horizontal);
+
+    void fire();
+
+    float getEffectiveDistance();
+
+    float getEffectiveAngle();
+
+    string getName();
+
+    void isHit(float damage);
+
+    float getHealthPercent();
+
+    void setText(string newText);
+
+    bool getActive();
+
+    void pause();
+
+    void unpause();
+
+    ShipDefinitions.ShipType getShipType();
+
+    void setEngineType(ShipDefinitions.EngineType type);
+
+    void setWeaponType(ShipDefinitions.WeaponType type);
+
+    void setShipType(ShipDefinitions.ShipType type);
+
+    void setFaction(ShipDefinitions.Faction newFaction);
+}
